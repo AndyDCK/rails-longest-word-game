@@ -17,7 +17,7 @@ class GamesController < ApplicationController
   end
 
   def letter_in_grid
-    @answer.chars.sort.all? { |letter| @grid.include?(letter) }
+    @answer.upcase.chars.sort.all? { |letter| @grid.include?(letter) }
   end
 
   def score
@@ -25,7 +25,7 @@ class GamesController < ApplicationController
     @answer = params[:word]
     grid_letters = @grid.each_char { |letter| print letter, ''}
     if !letter_in_grid
-      @result = "Sorry, but #{@answer.upcase} can't be built out of #{grid_letters}.😒"
+      @result = "Sorry, but #{@answe.upcase} can't be built out of #{grid_letters}.😒"
     elsif !word
       @result = "Sorry but #{@answer.upcase} does not seem to be a valid word🥱."
     elsif letter_in_grid && !word
