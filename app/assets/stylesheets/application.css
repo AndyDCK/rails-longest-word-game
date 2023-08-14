@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+
+.letters.mb-3 {
+  background-color: rgb(117, 117, 240);
+  text-align: center;
+  text-size-adjust: 15px;
+  opacity: 0.7;
+}
+
+a {
+  text-decoration: none;
+}
