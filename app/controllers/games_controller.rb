@@ -26,11 +26,11 @@ class GamesController < ApplicationController
     @answer = params[:word]
     grid_letters = @grid.each_char { |letter| print letter, ''}
     if !letter_in_grid
-      @result = "Sorry, but #{@answer.upcase} can't be built out of #{grid_letters}."
+      @result = "Sorry, but #{@answer.upcase} can't be built out of #{grid_letters}😒."
     elsif !word
-      @result = "Sorry but #{@answer.upcase} does not seem to be a valid word."
+      @result = "Sorry but #{@answer.upcase} does not seem to be a valid word🥱."
     elsif letter_in_grid && !word
-      @result = "Sorry but #{@answer.upcase} does not seem to be a valid word."
+      @result = "Sorry but #{@answer.upcase} does not seem to be a valid word.🥱"
     else letter_in_grid && !word
       @result = "Congratulation! #{@answer.upcase} is valid."
     end
